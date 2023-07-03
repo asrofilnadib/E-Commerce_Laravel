@@ -6,7 +6,7 @@
   flex: 0 0 250px;
 }
 .content-grey {
-  background-color: #f8f9fc;
+  background-color: #edebeb;
 }
 hr {
   margin-top: 0.8em;
@@ -22,6 +22,10 @@ hr {
   font-weight: 400;
 }
 .card-header {
-  background-color: #f8f9fc;
-  border-bottom: 1px solid #e3e6f0;
+  background-color: #cacaca;
+  border-bottom: 1px solid #515153;
+}
+
+.card-body {
+  background-color: #cbdae3;
 }

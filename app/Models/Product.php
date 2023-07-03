@@ -77,4 +77,11 @@ class Product extends Model
     {
         $this->attributes['updated_at'] = $updatedAt;
     }
+
+    protected $fillable = [
+      'name',
+      'description',
+      'price',
+      'image',
+    ];
 }

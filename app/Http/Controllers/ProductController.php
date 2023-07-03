@@ -55,7 +55,7 @@ class ProductController extends Controller
           'subtitle' => $product->getName() . " - Product Information",
           'product' => $product,
         ];
-        return view('products.show')->with('viewData', $viewData);
+        return view('products.show')->with('viewdata', $viewData);
     }
 
     /**

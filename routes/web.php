@@ -22,7 +22,8 @@ Route::get('/', [HomeController::class, 'index'])
 
 Route::get('/about', [HomeController::class, 'about']);
 
-Route::get('/products', [ProductController::class, 'index']);
+Route::get('/products', [ProductController::class, 'index'])
+  ->name('products.index');
 Route::get('/products/{id}', [ProductController::class, 'show'])
   ->name('products.show');
 
@@ -30,3 +31,7 @@ Route::get('/admin', [AdminHomeController::class, 'index'])
   ->name('admin.home.index');
 Route::get('/admin/products', [AdminProductController::class, 'index'])
   ->name('admin.products.index');
+Route::post('/admin/products/store', [AdminProductController::class, 'store'])
+  ->name('admin.products.store');
+Route::delete('/admin/products/{id}/delete', [AdminProductController::class, 'delete'])
+  ->name('admin.products.delete');
