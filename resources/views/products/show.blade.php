@@ -9,13 +9,30 @@
         <img src="{{ asset('/storage/' . $viewdata['product']->getImage()) }}" class="img-fluid rounded-start"
              alt="...">
       </div>
+
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title">
-            {{ $viewdata['product']->getName() }} Rp{{ $viewdata['product']->getPrice() }}.000.000
+            {{ $viewdata['product']->getName() }}   ${{ $viewdata['product']->getPrice() }}
           </h5>
+
           <p class="card-text">{{ $viewdata['product']['description'] }}</p>
-          <p class="card-text"><small class="text-muted">Add to chart</small></p>
+
+          <p class="card-text">
+          <form method="POST" action="{{ route('cart.add', ['id'=> $viewdata['product']->getId()]) }}">
+            <div class="row">
+              @csrf
+              <div class="col-auto">
+                <div class="input-group col-auto">
+                  <div class="input-group-text">Quantity</div>
+                  <input type="number" min="1" max="10" class="form-control quantity-input" name="quantity" value="1">
+                </div>
+              </div>
+              <div class="col-auto">
+                <button class="btn bg-primary text-white" type="submit">Add to cart</button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>

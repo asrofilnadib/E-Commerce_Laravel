@@ -11,10 +11,23 @@
         <a class="nav-link active" href="/">Home</a>
         <a class="nav-link active" href="/about">About</a>
         <a class="nav-link active" href="/products">Product</a>
+        <a class="nav-link active" href="{{ route('cart.index') }}"><img src="{{ asset('/img/items/shopping-cart.svg') }}" alt=""></a>
+        <div class="vr bg-white d-none d-lg-block mx-2"></div>
+        @guest
+          <a class="nav-link active" href="{{ route('login') }}">Login</a>
+          <a class="nav-link active" href="{{ route('register') }}">Register</a>
+        @else
+          <a class="nav-link active" href="{{ route('myaccount.orders') }}">My Orders</a>
+          <form action="{{ route('logout') }}" id="logout" method="POST">
+            <a role="button" class="nav-link active" onclick="document.getElementById('logout').submit();">Logout</a>
+            @csrf
+          </form>
+        @endguest
       </div>
     </div>
   </div>
 </nav>
+
 <header class="masthead bg-primary text-white text-center py-4">
   <div class="container d-flex align-items-center flex-column">
     <h2>@yield('subtitle', 'A Laravel Online Store')</h2>

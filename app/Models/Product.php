@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use http\Env\Request;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -84,4 +85,32 @@ class Product extends Model
       'price',
       'image',
     ];
+
+    public function validate($request) {
+      $request->validate([
+        'name' => 'required|max:255',
+        'description' => 'required',
+        'price' => 'required|numeric|gt:0',
+        'image' => 'image'
+      ]);
+    }
+
+    public static function sumPricesByQuantities($products, $productsInSession) {
+      $total = 0;
+      foreach ($products as $product) {
+        $total = $total + ($product->getPrice() * $productsInSession[$product->getId()]);
+      }
+      return $total;
+    }
+
+    /*Relationship Product Model*/
+    public function items() {
+      return $this->hasMany(Items::class);
+    }
+    public function getItems() {
+      return $this->items;
+    }
+    public function setItems($items) {
+      $this->attributes['items'] = $items;
+    }
 }
