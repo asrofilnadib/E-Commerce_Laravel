@@ -3,7 +3,7 @@
 @section('title', $viewData['title'])
 @section('subtitle', $viewData['subtitle'])
 @section('content')
-  <div class="card">
+  <div class="card" style="margin: 120px 0 70px">
     <div class="card-header">
       Products in Cart
     </div>
@@ -20,7 +20,7 @@
         <tbody>
         @foreach($viewData['products'] as $product)
           <tr>
-            <td>{{ $product->getId() }}</td>
+            <td class="text-center">{{ $product->getId() }}</td>
             <td>{{ $product->getName() }}</td>
             <td>${{ $product->getPrice() }}</td>
             <td>{{ session('products')[$product->getId()]  }}</td>
@@ -31,7 +31,7 @@
       <div class="row">
         <div class="text-end">
           <a class="btn btn-outline-secondary mb-2"><strong>Total to pay: </strong> ${{ $viewData['total'] }}</a>
-          @if(count($viewData['products']) > 0)
+          @if( count($viewData['products']) > 0)
             <a href="{{ route('cart.purchase') }}" class="btn bg-primary text-white mb-2">Purchase</a>
             <a href="{{ route('cart.delete') }}">
               <button class="btn btn-danger mb-2">

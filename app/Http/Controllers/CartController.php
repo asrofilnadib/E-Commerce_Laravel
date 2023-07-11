@@ -39,7 +39,7 @@ class CartController extends Controller
       $products[$id] = $request->input('quantity');
       $request->session()->put('products', $products);
 
-      return redirect()->route('cart.index');
+      return redirect()->route('products.index');
     }
 
     public function delete(Request $request): \Illuminate\Http\RedirectResponse

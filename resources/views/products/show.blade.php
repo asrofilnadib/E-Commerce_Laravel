@@ -3,7 +3,7 @@
 @section('title', $viewdata['title'])
 @section('subtitle', $viewdata['subtitle'])
 @section('content')
-  <div class="card mb-3" style="max-width: 1020px;">
+  <div class="card" style="margin-top: 120px; margin-bottom: 50px">
     <div class="row g-0">
       <div class="col-md-4">
         <img src="{{ asset('/storage/' . $viewdata['product']->getImage()) }}" class="img-fluid rounded-start"
@@ -16,7 +16,7 @@
             {{ $viewdata['product']->getName() }}   ${{ $viewdata['product']->getPrice() }}
           </h5>
 
-          <p class="card-text">{{ $viewdata['product']['description'] }}</p>
+          <p class="card-text my-4 text-justify">{{ $viewdata['product']['description'] }}</p>
 
           <p class="card-text">
           <form method="POST" action="{{ route('cart.add', ['id'=> $viewdata['product']->getId()]) }}">
@@ -29,7 +29,7 @@
                 </div>
               </div>
               <div class="col-auto">
-                <button class="btn bg-primary text-white" type="submit">Add to cart</button>
+                <button class="btn text-white" type="submit" style="background-color: #FF9EAAFF">Add to cart</button>
               </div>
             </div>
           </form>

@@ -60,7 +60,7 @@ class AdminProductController extends Controller
     }
 
     public function update(Request $request, $id) {
-      Product::validate($request);
+      (new \App\Models\Product)->validate($request);
 
       $product = Product::findOrFail($id);
       $product->setName($request->input('name'));

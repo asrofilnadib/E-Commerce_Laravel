@@ -3,7 +3,7 @@
 @section('title', $viewData['title'])
 @section('subtitle', $viewData['subtitle'])
 @section('content')
-  <div class="card">
+  <div class="card" style="margin: 120px 0 70px">
     <div class="card-header">
       Purchase Completed
     </div>

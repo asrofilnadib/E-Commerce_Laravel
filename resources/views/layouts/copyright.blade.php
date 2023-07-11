@@ -1,14 +1,18 @@
-{{-- footer --}}
-<footer>
-  <div class="copyright py-4 text-center text-white">
-    <small>
-      &copy; Copyright <strong>E-Commerce</strong>. All Rights Reserved
-    </small>
-    <div class="credit">
-      <small class="fw-lighter">
-        Designed by <a href="https://twitter.com/asrofilnadib" class="text-decoration-none fw-bold" target="_blank" style="color: #1abc9c">Asrofil Nadib</a>
-      </small>
+<!-- footer -->
+<div class="footer">
+  <div class="container">
+    <div class="about-us-foot">
+      <h6>Akala</h6>
+    </div>
+    <div class="social-media">
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-google"></i></a>
+      <a href="#"><i class="fa fa-instagram"></i></a>
+    </div>
+    <div class="copyright">
+      <span>© All Right Reserved</span>
     </div>
   </div>
-</footer>
-{{-- footer --}}
+</div>
+<!-- end footer -->

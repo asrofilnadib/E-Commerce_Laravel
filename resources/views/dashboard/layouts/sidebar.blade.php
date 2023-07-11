@@ -1,4 +1,4 @@
-<div class="p-3 col fixed text-white bg-dark">
+<div class="p-3 col fixed text-white bg-dark" style="width: 25%">
   <a href="{{ route('admin.home.index') }}" class="text-white text-decoration-none">
     <span class="fs-4">Admin Panel</span>
   </a>
